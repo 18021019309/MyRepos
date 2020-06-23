@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/ZftNJCgQROtqusgGLS11FU3hHyY/q7UZ1fcXqSqtSXigichgFkZ4KLFv/OV4g3Dd1Ja3Vu6QcZnwyEdTi2gkQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\SuZhou\\SuZhou\\TestColor\\TestColor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

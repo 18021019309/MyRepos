@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+@*<h2>@ViewBag.Title.</h2>*@
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend style="text-align:center">百事看板</legend>
+</fieldset>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend style="text-align:right" class="testTime">时间：<span id="currentTime"></span></legend>
+</fieldset>
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">左出垛口</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">条码信息：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">产品类别：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" lay-verify="required" lay-reqtext="用户名是必填项，岂能为空？" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">箱子总数：</label>
+                            <div class="layui-input-block">
+                                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">出料时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">右出垛口</div>
+                <div class="layui-card-body">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">条码信息：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">产品类别：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" lay-verify="required" lay-reqtext="用户名是必填项，岂能为空？" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">箱子总数：</label>
+                            <div class="layui-input-block">
+                                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">出料时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">总数信息</div>
+                <div class="layui-card-body">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">组别：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">总垛数：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">总箱数：</label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        layui.use('element', function () {
+            var $ = layui.jquery;
+            $(function () {
+                //js 获取当前时间
+                function fnDate() {
+                    var oDiv = document.getElementById("currentTime");
+                    var date = new Date();
+                    var year = date.getFullYear();
+                    var month = date.getMonth();
+                    var data = date.getDate();
+                    var hours = date.getHours();
+                    var minute = date.getMinutes();
+                    var second = date.getSeconds();
+                    var time = year + "/" + fnW((month + 1)) + "/" + fnW(data) + " " + fnW(hours) + ":" + fnW(minute) + ":" + fnW(second);
+                    var a = new Array("日", "一", "二", "三", "四", "五", "六");
+                    var week = new Date().getDay();
+                    var str = "星期" + a[week];
+                    oDiv.innerHTML = time + "　" + str;
+                }
+                function fnW(str) { return str > 9 ? str : "0" + str; }
+
+                setInterval(function () {
+                    fnDate();
+                }, 1000);
+            })
+        })
+
+    </script>
+
+}

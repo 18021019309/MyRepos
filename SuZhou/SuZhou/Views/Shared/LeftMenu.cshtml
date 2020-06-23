@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "LeftMenu";
+}
+@*这个帮族类 处于当前页面激活央视*@
+<ul class="layui-nav layui-nav-tree" lay-filter="test">
+    <li class="layui-nav-item layui-nav-itemed">
+        <a class="" href="javascript:;">仓储管理 @Model</a>
+        <dl class="layui-nav-child">
+            <dd>@Html.ActionLink("采购入库", "Index", "Home", null, Request.Url.LocalPath == Url.Action("Index", "Home") ? new { Class = "layui-this" } : null)</dd>
+            <dd>@Html.ActionLink("调拨出库", "About", "Home", null, Request.Url.LocalPath == Url.Action("About", "Home") ? new { Class = "layui-this" } : null)</dd>
+            <dd>@Html.ActionLink("调拨入库", "Contact", "Home", null, Request.Url.LocalPath == Url.Action("Contact", "Home") ? new { Class = "layui-this" } : null)</dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item layui-nav-itemed">
+        <a href="javascript:;">人员调动</a>
+        <dl class="layui-nav-child">
+            <dd>@Html.ActionLink("调动申请", "Index", "Home", null, Request.Url.LocalPath == Url.Action("Index", "Home") ? new { Class = "layui-this" } : null)</dd>
+            <dd>@Html.ActionLink("调动确认", "About", "Home", null, Request.Url.LocalPath == Url.Action("About", "Home") ? new { Class = "layui-this" } : null)</dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">@Html.ActionLink("效益评估", "Index", "Home", null, Request.Url.LocalPath == Url.Action("Index", "Home") ? new { Class = "layui-this" } : null)</li>
+</ul>
